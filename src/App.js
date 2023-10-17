@@ -13,6 +13,8 @@ function App() {
   const [real,setreal]=useState(null);
   const [upperText,setupperText] = useState("Text Here");
   const [lowerText,setlowerText] = useState("Text Here");
+  const [textcol,settextcol] =useState("white");
+  const [textsize,settextsize] =useState("50");
 
   function handleOnChange(event){
       setSelectedImage(event.target.files[0]);
@@ -23,6 +25,28 @@ function App() {
   function handleChangeLow(event){
     setlowerText(event.target.value);
   }
+
+  function handleCol(event){
+    const al_butt =document.getElementsByClassName("buttons");
+    const len =al_butt.length;
+    for(var i=0;i<len;i++){
+      if(al_butt[i].id===event.target.name){
+        document.getElementsByClassName("buttons")[i].checked=true;
+      }
+      else{
+        document.getElementsByClassName("buttons")[i].checked=false;
+      }
+    }
+    settextcol(event.target.name);
+  }
+
+  function handleSize(event){
+      console.log(event.target.value)
+      settextsize(event.target.value);
+  }
+
+
+
   return (
     <div className="App">
       <div id="main">
@@ -31,8 +55,8 @@ function App() {
           {real?<img src={URL.createObjectURL(real)} alt="not found"></img>:<img src={nophoto} alt="not found"></img>}
           
         </div>
-        <strong id="upper">{upperText?upperText:"Text Here"}</strong>
-        <strong id="lower">{lowerText?lowerText:"Text Here"}</strong>
+        <strong id="upper"  style={{ color: textcol,fontSize:textsize+"%",}}>{upperText?upperText:"Text Here"}</strong>
+        <strong id="lower" style={{ color: textcol,fontSize:textsize+"%",}}>{lowerText?lowerText:"Text Here"}</strong>
         <img src={a} alt="not found">
         </img>
       </div>
@@ -71,8 +95,31 @@ function App() {
 
         </div>
         <div id="text_setting">
-            <div id="text_size">qklregfjvnb</div>
-            <div id="text_col">dfghjkkjhgf</div>
+            <div id="text_size">
+              <p>Text Size</p>
+              <input type='range' onChange={handleSize}></input>
+            </div>
+            <div id="text_col">
+            <div className='radio_buttons'>
+            <p>Text Color</p>
+            </div>
+            <div className='radio_buttons'>
+            <input type="checkbox" name="white" id="white" className='buttons' onClick={handleCol}></input>
+            <label htmlFor="white">White</label>
+            </div>
+            <div className='radio_buttons'>
+            <input type="checkbox" name="black" id="black" className='buttons' onClick={handleCol}></input>
+            <label htmlFor="black">Black</label>
+            </div>
+            <div className='radio_buttons'>
+            <input type="checkbox" name="blue" id="blue" className='buttons' onClick={handleCol}></input>
+            <label htmlFor="blue">Blue</label>
+            </div>
+            <div className='radio_buttons'>
+            <input type="checkbox" name="yellow" id="yellow" className='buttons' onClick={handleCol}></input>
+            <label htmlFor="yellow">Yellow</label>
+            </div>
+            </div>
         </div>
 
       </div>
