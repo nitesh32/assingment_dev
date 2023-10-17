@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -35,4 +40,125 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#main{
+  height: 90vh;
+  width: 50%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#main img{
+  height: 60%;
+  width: 60%;
+}
+#child_img{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: 250px;
+}
+#upper{
+  position: absolute;
+  top: 220px;
+}
+#lower{
+  position: absolute;
+  top: 380px;
+}
+
+#settings{
+  height: 90vh;
+  width: 40%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#colors{
+  height: 170px;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#colors_img{
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#colors img{
+  width: 24%;
+  height: 100%;
+  border: 1px dotted grey;
+  cursor: pointer;
+}
+.Lin{
+  border: 0.5px solid gray;
+  width: 80%;
+}
+.Lin_s{
+  border: 0.5px solid gray;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#choose_file{
+  height: 70px;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+h3{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+p{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#enter_text{
+  height: 150px;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#enter_text input{
+  border:none;
+  outline: none;
+  height: 30px;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+#text_setting{
+  height: 280px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  flex-direction: row;
+}
+#text_size{
+  height: 90%;
+  width: 50%;
+  border: 1px solid black;
+}
+#text_col{
+  height: 90%;
+  width: 40%;
+  border: 1px solid black;
 }
